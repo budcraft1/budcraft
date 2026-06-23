@@ -1,170 +1,265 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>BudCraft – Cannabis Zubehör & CBD Guides</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body { margin:0; font-family:system-ui, sans-serif; background:#f5f7fa; color:#222; }
+  <meta charset="UTF-8">
+  <title>BudCraft – Unabhängiges Informationsprojekt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
 
-  /* Hero */
-  .hero {
-    background:linear-gradient(135deg,#35b36b,#2a7de1);
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-  }
-  .hero h1 { font-size:2.8rem; margin:0 0 10px; }
-  .hero p { font-size:1.2rem; opacity:0.9; }
-  .btn {
-    display:inline-block; margin-top:25px; padding:14px 32px;
-    background:white; color:#1c3d2e; border-radius:999px;
-    font-weight:600; text-decoration:none; font-size:1.1rem;
-  }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 20px;
+      background: #0f172a;
+      color: #fff;
+    }
 
-  /* Container */
-  .container { max-width:1000px; margin:0 auto; padding:40px 20px; }
+    header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-  /* Sections */
-  h2 { font-size:2rem; margin-bottom:10px; color:#1c3d2e; }
-  .section { margin-bottom:50px; }
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
 
-  /* Cards */
-  .cards { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
-  .card {
-    background:white; padding:20px; border-radius:14px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
-    border:1px solid #e5e5e5;
-  }
-  .card h3 { margin-top:0; color:#2a7de1; }
+    header span {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
 
-  /* Footer */
-  footer {
-    background:#1c1f22; color:#bbb; text-align:center;
-    padding:30px 20px; margin-top:40px; font-size:0.9rem;
-  }
-</style>
+    main {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      padding: 0 15px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Produktboxen */
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-box {
+      display: flex;
+      gap: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    .product-box img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .product-box h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .product-box p {
+      margin: 10px 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .product-box a {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #2e8b57;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 600px) {
+      .product-box {
+        flex-direction: column;
+      }
+
+      .product-box img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>BudCraft</h1>
-  <p>Die moderne Plattform für Cannabis‑Zubehör, CBD‑Produkte & Headshop‑Guides.</p>
-  <a class="btn" href="#warum">Warum BudCraft?</a>
-</div>
-
-<div class="container">
-
-  <!-- Was ist BudCraft -->
-  <div class="section">
-    <h2>Was ist BudCraft?</h2>
-    <p>BudCraft ist eine hochwertige Informations‑ und Vergleichsplattform für CBD‑Produkte, Headshop‑Artikel und Grow‑Equipment.  
-    Wir setzen auf Qualität, Transparenz und moderne Produktpräsentation.</p>
-  </div>
-
-  <!-- Warum sollten Partner dich zulassen -->
-  <div class="section" id="warum">
-    <h2>Warum BudCraft für Affiliate‑Partner?</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Professionelles Design</h3>
-        <p>Modern, seriös und mobil optimiert – ideal für Marken, die Wert auf Qualität legen.</p>
-      </div>
-      <div class="card">
-        <h3>SEO‑starke Inhalte</h3>
-        <p>Geplante Ratgeber, Produktvergleiche und thematische Landingpages sorgen für organischen Traffic.</p>
-      </div>
-      <div class="card">
-        <h3>Hohe Conversion‑Rate</h3>
-        <p>Klare Produktboxen, strukturierte Vergleiche und zielgruppenorientierte Texte.</p>
-      </div>
+  <!-- HEADER MIT LOGO (Sonne + Blatt + BudCraft) -->
+  <header>
+    <!-- Logo-Datei: lade dein erstes Logo z.B. als logo-budcraft-round.png in das Repo -->
+    <img src="logo-budcraft-round.png" alt="BudCraft Logo">
+    <div>
+      <h1>BudCraft</h1>
+      <span>Unabhängiges Informationsprojekt & Affiliate‑Plattform</span>
     </div>
-  </div>
+  </header>
 
-  <!-- Kategorien -->
-  <div class="section">
-    <h2>Geplante Kategorien</h2>
-    <div class="cards">
-      <div class="card"><h3>CBD‑Öle & Edibles</h3><p>Premium‑Marken, Laborberichte, Vergleiche.</p></div>
-      <div class="card"><h3>Vaporizer & Grinder</h3><p>Top‑Geräte, Tests & Empfehlungen.</p></div>
-      <div class="card"><h3>Grow‑Equipment</h3><p>Beleuchtung, Zelte, Dünger & Zubehör.</p></div>
-      <div class="card"><h3>Headshop‑Zubehör</h3><p>Papers, Filter, Bongs & Tools.</p></div>
-    </div>
-  </div>
+  <main>
 
-</div>
+    <!-- Intro / Hero -->
+    <section>
+      <h2>Willkommen bei BudCraft</h2>
+      <p style="text-align:center; max-width: 650px; margin: 0 auto;">
+        BudCraft ist ein unabhängiges Informationsprojekt rund um CBD, Grow‑Equipment und Headshop‑Zubehör.
+        Geplant sind Ratgeber, Produktvergleiche und kuratierte Empfehlungen mit Fokus auf Qualität und Transparenz.
+      </p>
+    </section>
 
-<footer>
-
-  © 2026 BudCraft – Unabhängiges Informationsprojekt
-</footer>
-<!-- 🔥 PRODUKTBOXEN – BudCraft Style -->
-<section style="max-width: 900px; margin: 40px auto; font-family: Arial;">
-  <h2 style="text-align:center; font-size: 2em; margin-bottom: 20px;">Top Produkte</h2>
-
-  <div style="display: flex; flex-direction: column; gap: 20px;">
-
-    <!-- Produktbox 1 -->
-    <div style="display: flex; gap: 20px; border: 1px solid #ddd; border-radius: 12px; padding: 15px; background: #fff;">
-      <img src="https://via.placeholder.com/150" alt="Produktbild" style="width:150px; height:150px; border-radius: 10px; object-fit: cover;">
-      <div>
-        <h3 style="margin:0; font-size: 1.3em;">Produktname 1</h3>
-        <p style="margin:10px 0;">Kurze Beschreibung des Produkts. Vorteile, Nutzen, Besonderheiten.</p>
-        <a href="#" style="display:inline-block; padding:10px 15px; background:#2e8b57; color:white; border-radius:8px; text-decoration:none;">Zum Angebot</a>
+    <!-- Warum sollten Partner dich zulassen -->
+    <section id="warum">
+      <h2>Warum BudCraft für Affiliate‑Partner?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Professionelles Design</h3>
+          <p>Modern, seriös und mobil optimiert – ideal für Marken, die Wert auf Auftritt und Vertrauen legen.</p>
+        </div>
+        <div class="card">
+          <h3>SEO‑starke Inhalte</h3>
+          <p>Geplante Ratgeber, Produktvergleiche und thematische Landingpages für langfristige Sichtbarkeit.</p>
+        </div>
+        <div class="card">
+          <h3>Hohe Konversionsrate</h3>
+          <p>Klare Produktboxen, strukturierte Vergleiche und zielgerichtete Empfehlungen statt Banner‑Spam.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Produktbox 2 -->
-    <div style="display: flex; gap: 20px; border: 1px solid #ddd; border-radius: 12px; padding: 15px; background: #fff;">
-      <img src="https://via.placeholder.com/150" alt="Produktbild" style="width:150px; height:150px; border-radius: 10px; object-fit: cover;">
-      <div>
-        <h3 style="margin:0; font-size: 1.3em;">Produktname 2</h3>
-        <p style="margin:10px 0;">Kurze Beschreibung des Produkts. Vorteile, Nutzen, Besonderheiten.</p>
-        <a href="#" style="display:inline-block; padding:10px 15px; background:#2e8b57; color:white; border-radius:8px; text-decoration:none;">Zum Angebot</a>
+    <!-- Kategorien -->
+    <section>
+      <h2>Geplante Kategorien</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>CBD‑Öle & Esswaren</h3>
+          <p>Öle, Kapseln, Gummies und mehr – Fokus auf Qualität und Laboranalysen.</p>
+        </div>
+        <div class="card">
+          <h3>Vaporizer & Grinder</h3>
+          <p>Mobile und stationäre Vaporizer, Grinder und Zubehör für effizienten Konsum.</p>
+        </div>
+        <div class="card">
+          <h3>Grow‑Equipment</h3>
+          <p>Beleuchtung, Zelte, Dünger & Zubehör für Home‑Grower.</p>
+        </div>
+        <div class="card">
+          <h3>Headshop‑Zubehör</h3>
+          <p>Papers, Filter, Bongs & Tools für den klassischen Konsum.</p>
+        </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-  <!-- 🔥 PRODUKTBOXEN – BudCraft Style -->
-<section style="max-width: 900px; margin: 40px auto; font-family: Arial;">
-  <h2 style="text-align:center; font-size: 2em; margin-bottom: 20px;">Top Produkte</h2>
+    <!-- 🔥 PRODUKTBOXEN – BudCraft Style -->
+    <section>
+      <h2>Top Produkte</h2>
 
-  <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="product-list">
 
-    <!-- Produktbox 1 -->
-<div style="display: flex; gap: 20px; border: 1px solid #ddd; border-radius: 12px; padding: 15px; background: #fff;">
-  <img src="https://m.media-amazon.com/images/I/71Zf0Zqg5-L._AC_SL1500_.jpg" 
-       alt="Mighty Plus Vaporizer" 
-       style="width:150px; height:150px; border-radius: 10px; object-fit: cover;">
-  <div>
-    <h3 style="margin:0; font-size: 1.3em;">Storz & Bickel Mighty+ Vaporizer</h3>
-    <p style="margin:10px 0;">Einer der stärksten und zuverlässigsten Vaporizer am Markt. Perfekt für Kräuter & Konzentrate.</p>
-    <a href="#" style="display:inline-block; padding:10px 15px; background:#2e8b57; color:white; border-radius:8px; text-decoration:none;">Mehr erfahren</a>
-  </div>
-</div>
-    <!-- Produktbox 2 -->
-    <div style="display: flex; gap: 20px; border: 1px solid #ddd; border-radius: 12px; padding: 15px; background: #fff;">
-      <img src="https://m.media-amazon.com/images/I/81pQ2E31jjL._AC_SL1500_.jpg" alt="GIZEH Black King Size" style="width:150px; height:150px; border-radius: 10px; object-fit: cover;">
-      <div>
-        <h3 style="margin:0; font-size: 1.3em;">GIZEH Black King Size + Tips</h3>
-        <p style="margin:10px 0;">Ultradünne Papers mit perfektem Brandverhalten. Klassiker für Headshop‑Zubehör.</p>
-        <a href="#" style="display:inline-block; padding:10px 15px; background:#2e8b57; color:white; border-radius:8px; text-decoration:none;">Zum Angebot</a>
+        <!-- Produktbox 1 -->
+        <div class="product-box">
+          <img src="https://m.media-amazon.com/images/I/71Zf0Zqg5-L._AC_SL1500_.jpg"
+               alt="Mighty Plus Vaporizer">
+          <div>
+            <h3>Storz &amp; Bickel Mighty+ Vaporizer</h3>
+            <p>Einer der stärksten und zuverlässigsten Vaporizer am Markt. Perfekt für Kräuter &amp; Konzentrate.</p>
+            <a href="#">Zum Angebot</a>
+          </div>
+        </div>
+
+        <!-- Produktbox 2 -->
+        <div class="product-box">
+          <img src="https://m.media-amazon.com/images/I/81pQ2E31jjL._AC_SL1500_.jpg"
+               alt="GIZEH Black King Size">
+          <div>
+            <h3>GIZEH Black King Size + Tips</h3>
+            <p>Ultradünne Papers mit perfektem Brandverhalten – Klassiker im Headshop‑Sortiment.</p>
+            <a href="#">Zum Angebot</a>
+          </div>
+        </div>
+
+        <!-- Produktbox 3 -->
+        <div class="product-box">
+          <img src="https://m.media-amazon.com/images/I/61pZ0pQfYxL._AC_SL1500_.jpg"
+               alt="CBD Öl 10%">
+          <div>
+            <h3>CBD Öl 10% – Vollspektrum</h3>
+            <p>Hochwertiges Vollspektrum‑CBD‑Öl für Entspannung, Schlaf und Regeneration.</p>
+            <a href="#">Zum Angebot</a>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <!-- Produktbox 3 -->
-    <div style="display: flex; gap: 20px; border: 1px solid #ddd; border-radius: 12px; padding: 15px; background: #fff;">
-      <img src="https://m.media-amazon.com/images/I/61pZ0pQfYxL._AC_SL1500_.jpg" alt="CBD Öl 10%" style="width:150px; height:150px; border-radius: 10px; object-fit: cover;">
-      <div>
-        <h3 style="margin:0; font-size: 1.3em;">CBD Öl 10% – Vollspektrum</h3>
-        <p style="margin:10px 0;">Hochwertiges Vollspektrum‑CBD‑Öl für Entspannung, Schlaf und Regeneration.</p>
-        <a href="#" style="display:inline-block; padding:10px 15px; background:#2e8b57; color:white; border-radius:8px; text-decoration:none;">Zum Angebot</a>
-      </div>
-    </div>
+  </main>
 
-  </div>
-</section>
+  <footer>
+    © 2026 BudCraft – Unabhängiges Informationsprojekt
+  </footer>
+
 </body>
 </html>
