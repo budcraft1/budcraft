@@ -1,1 +1,7 @@
-
+<header>
+  <img src="logo-budcraft.png" alt="BudCraft Logo" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
+  <div>
+    <h1>BudCraft</h1>
+    <span>Unabhängiges Informationsprojekt & Affiliate‑Plattform</span>
+  </div>
+</header>
